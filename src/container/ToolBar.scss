@@ -1,0 +1,28 @@
+.toolBar{
+    background-color: DodgerBlue;
+    display: flex;
+    align-items: center;
+     justify-content: space-around;
+     height: 50px;
+
+     .titleName{
+        color:red;
+        font-weight: bold;
+        font-size: 32Px;
+    }
+   input{
+        width:100%;
+       height: 25px;
+       border-radius: 0 5px 5px 0;
+       padding-left:20px;
+       font-size: 15px;
+
+   }
+   .searchBar{
+       width:50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+
+}

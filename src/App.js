@@ -6,7 +6,7 @@ import store from './store/store'
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Provider store={store}>
       <StudentResults/>
       </Provider>

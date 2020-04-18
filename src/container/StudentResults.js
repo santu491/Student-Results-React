@@ -77,12 +77,14 @@
 
 //-----------
 
-import React, {  useEffect } from 'react'
+import React, { useEffect } from 'react'
 //import { studentsInfo } from '../constants/StudentsInfo'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { convertIntoGrades, convertIntoPercentage } from '../utilities/genericFunctions'
 import ToolBar from './ToolBar'
-import {getResults,serachResults} from '../store/results'
+import { getResults, serachResults } from '../store/results'
+import './StudentResults.scss'
+
 
 const StudentResults = (props) => {
 
@@ -140,38 +142,58 @@ const StudentResults = (props) => {
 
     }
 
+    // let resultList = props.results.map((student) => {
+    //     return (
+    //         <div>
+    //             <p>{student.grade}</p>
+    //             <p>{student.studentName}</p>
+    //             <p>{student.classTeacher}</p>
+    //             <p>{student.branchName}</p>
+    //         </div>
+    //     )
+    // })
+
     let resultList = props.results.map((student) => {
         return (
-            <div>
-                <p>{student.grade}</p>
-                <p>{student.studentName}</p>
-                <p>{student.classTeacher}</p>
-                <p>{student.branchName}</p>
-            </div>
+
+            <tr>
+                <td>{student.grade}</td>
+                <td>{student.studentName}</td>
+                <td>{student.classTeacher}</td>
+                <td>{student.branchName}</td>
+
+            </tr>
+  
+
+
         )
     })
 
-
     return (
-        <div>
+        <div className="studentResults">
             {/* <p>hii</p> */}
             <ToolBar searchHandler={searchHandler} />
-            {resultList}
+            <div className="resultTable">
+                <table>
+                    {resultList}
+                </table>
+            </div>
+
         </div>
     )
 }
 
-const mapStateToProps=(state)=>{
-    return{
-        results:state.results
+const mapStateToProps = (state) => {
+    return {
+        results: state.results
     }
 }
 
-const mapDispatchToProps=(dispatch)=>{
-    return{
-        getResults:(data)=>dispatch(getResults(data)),
-        serachResults:(searchString)=>dispatch(serachResults(searchString))
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getResults: (data) => dispatch(getResults(data)),
+        serachResults: (searchString) => dispatch(serachResults(searchString))
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(StudentResults)
+export default connect(mapStateToProps, mapDispatchToProps)(StudentResults)

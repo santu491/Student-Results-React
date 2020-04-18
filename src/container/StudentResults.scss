@@ -1,0 +1,46 @@
+// .body{
+//     background-color: red;
+// }
+
+.studentResults{
+    
+    // table{
+    //     // background-color: red;
+    //     width:100%;
+    //     border-collapse:collapse;
+    //     padding:100,
+
+ 
+    // }
+    // td{
+    //     width: 40%;
+    //     height:30px;
+    //      border-bottom: 1px solid red;
+    // }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        text-align: left;
+        padding: 18px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      .resultTable{
+          width:80%;
+          margin: auto;
+          margin-top:3%;
+          
+      }
+    //   .tabelContent{
+    //       display: flex;
+    //       justify-content: center;
+    //   }
+   
+    
+}
