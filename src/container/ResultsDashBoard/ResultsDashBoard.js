@@ -101,9 +101,24 @@ const ResultsDashBoard = (props) => {
 
             }
         })
+        // updatedData.sort((a, b) => {
+        //     console.log("a:",a,"b:",b)
+        //     var x = a.grade.toLowerCase();
+        //     var y = b.grade.toLowerCase();
+        //     if (x < y) { return -1; }
+        //     if (x > y) { return 1; }
+        //     return 0;
+        // })
         updatedData.sort((a, b) => {
-            var x = a.grade.toLowerCase();
-            var y = b.grade.toLowerCase();
+            let u = a.studentName.toLowerCase();
+            let v = b.studentName.toLowerCase();
+            let x = a.grade.toLowerCase();
+            let y = b.grade.toLowerCase();
+            if (x === y) {
+                if (u < v) { return -1; }
+                if (u > v) { return 1; }
+                return 0;
+            }
             if (x < y) { return -1; }
             if (x > y) { return 1; }
             return 0;
@@ -122,7 +137,7 @@ const ResultsDashBoard = (props) => {
     }
 
 
-   const selectStudent=(student)=>{
+    const selectStudent = (student) => {
         setStudentData(student)
         setShowModal(true)
     }
@@ -130,10 +145,10 @@ const ResultsDashBoard = (props) => {
 
     return (
         <div className="studentResults">
-            <ToolBar searchHandler={searchHandler} />   
+            <ToolBar searchHandler={searchHandler} />
             <StudentResults
                 results={props.results}
-                selectStudent={(student)=>selectStudent(student)}
+                selectStudent={(student) => selectStudent(student)}
             />
             {
                 showModal && <StudentResultsModal studentData={studentData} setShowModal={() => setShowModal(false)} />
