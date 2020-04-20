@@ -144,7 +144,7 @@ const ResultsDashBoard = (props) => {
 
 
     return (
-        <div className="studentResults">
+        <div >
             <ToolBar searchHandler={searchHandler} />
             <StudentResults
                 results={props.results}

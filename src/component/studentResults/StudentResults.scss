@@ -8,21 +8,49 @@
       width: 100%;
     }
     
-    td, th {
+    td {
+      //text-align: left;
+     // padding: 5px;
+     border:1px solid #ddd;
+     padding-left: 8px;
+    }
+    th{
+      padding:15px 5px;
+      border:1px solid #ddd;
       text-align: left;
-      padding: 5px;
+      background-color: #4CAF50;
+      color: white;
     }
     
     tr:nth-child(even) {
-      background-color: #dddddd;
+      background-color: #f2f2f2;
     }
     td.grade{
       text-align: center;
       font-weight: bold;
       
     }
+    th.grade{
+      text-align: center;      
+    }
     td.button{
       text-align: center;
+      color:red;
+      cursor: pointer;
+     // padding:0 10px;
+     
+    }
+    tr:hover{
+      background-color: #ddd;
     }
 
+}
+
+@media(max-width:499px){
+  .resultTable{
+    th.Teacher,td.Teacher{
+      display:none
+      
+    }
+  }
 }

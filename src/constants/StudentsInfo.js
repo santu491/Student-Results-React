@@ -15,7 +15,7 @@ export const studentsInfo = [
         }
     },
     {
-        "studentName": "Mouli",
+        "studentName": "Mahesh",
         "branchName": "C.E.C",
         "classTeacher": "Nageshwar Rao",
         "marks": {
