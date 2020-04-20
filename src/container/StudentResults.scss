@@ -17,30 +17,70 @@
     //     height:30px;
     //      border-bottom: 1px solid red;
     // }
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-      
-      td, th {
-        text-align: left;
-        padding: 18px;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
+ 
       .resultTable{
           width:80%;
           margin: auto;
           margin-top:3%;
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
           
+          td, th {
+            text-align: left;
+            padding: 5px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+          td.grade{
+            text-align: center;
+            font-weight: bold;
+            
+          }
+          td.button{
+            text-align: center;
+          }
+
       }
-    //   .tabelContent{
-    //       display: flex;
-    //       justify-content: center;
-    //   }
-   
-    
+}
+
+.modalContent{
+  padding:20px 0;
+  margin-left: 30px;
+
+  table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width:40%
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  .results{
+    text-align: center;
+    color:green;
+    font-weight: bold;
+  }
+  .close{
+    width:70px;
+    height: 30px;
+    background-color: green;
+
+  }
+
+}
+
+@media(max-width:499px){
+  .studentResults{
+    th.Teacher,td.Teacher{
+      display:none
+      
+    }
+  }
 }

@@ -5,26 +5,33 @@ export const convertIntoPercentage = (totalMarks) => {
 
 export const convertIntoGrades = (percentage) => {
     let grade
+    let color
     switch (true) {
         case (percentage <= 100) && (90 <= percentage):
             grade = "A";
+            color="green";
             break;
         case (percentage < 90) && (80 <= percentage):
             grade = "B";
+            color="blue";
             break;
         case (percentage < 80) && (70 <= percentage):
             grade = "C";
+            color="balck";
             break;
         case (percentage < 70) && (60 <= percentage):
             grade = "D";
+            color="yellow";
             break;
         case percentage < 60:
             grade = "F";
+            color="red";
             break;
         default:
-            grade = "F"
+            grade = "F";
+            color="red";
             break;
     }
 
-    return grade
+    return {grade:grade,color:color}
 }

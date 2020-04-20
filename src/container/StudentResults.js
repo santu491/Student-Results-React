@@ -77,18 +77,21 @@
 
 //-----------
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 //import { studentsInfo } from '../constants/StudentsInfo'
 import { connect } from 'react-redux'
 import { convertIntoGrades, convertIntoPercentage } from '../utilities/genericFunctions'
 import ToolBar from './ToolBar'
 import { getResults, serachResults } from '../store/results'
 import './StudentResults.scss'
-
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import Modal from '../UI/Modal'
 
 const StudentResults = (props) => {
 
     // const [results, setResults] = useState(studentsInfo)
+    const [showModal, setShowModal] = useState(false)
+    const [studentData, setStudentData] = useState({})
 
     const setPercaentage = (results) => {
         let marks = []
@@ -105,16 +108,27 @@ const StudentResults = (props) => {
         let updatedData = props.results.map((student) => {
             return {
                 ...student,
-                grade: setPercaentage(student.marks)
+                grade: setPercaentage(student.marks).grade,
+                color: setPercaentage(student.marks).color
+
             }
         })
-        updatedData.sort((a, b) => {
+        // updatedData.sort((a, b) => {
+        //     var x = a.grade.toLowerCase();
+        //     var y = b.grade.toLowerCase();
+        //     if (x < y) { return -1; }
+        //     if (x > y) { return 1; }
+        //     return 0;
+        // })
+
+           updatedData.sort((a, b) => {
             var x = a.grade.toLowerCase();
             var y = b.grade.toLowerCase();
             if (x < y) { return -1; }
             if (x > y) { return 1; }
             return 0;
         })
+
         props.getResults(updatedData)
         //setResults(updatedData)
     }
@@ -157,17 +171,28 @@ const StudentResults = (props) => {
         return (
 
             <tr>
-                <td>{student.grade}</td>
+                <td className="grade" style={{color:student.color}}>{student.grade}</td>
                 <td>{student.studentName}</td>
-                <td>{student.classTeacher}</td>
+                <td  className="Teacher">{student.classTeacher}</td>
                 <td>{student.branchName}</td>
 
+              <td className="button"> <p className="btn" onClick={() => {
+                    setStudentData(student)
+                    setShowModal(true)
+
+                }}>></p></td> 
+
+
+
             </tr>
-  
+
 
 
         )
     })
+
+
+
 
     return (
         <div className="studentResults">
@@ -175,9 +200,49 @@ const StudentResults = (props) => {
             <ToolBar searchHandler={searchHandler} />
             <div className="resultTable">
                 <table>
+                    <tr>
+                        <th>Grade</th>
+                        <th>Student Name</th>
+                        <th className="Teacher">Teacher Name</th>
+                        <th>Branch</th>
+                    </tr>
                     {resultList}
                 </table>
             </div>
+            {/* <div className="model">
+                <div className="modelContainer">
+                    <p>Name:santosh</p>
+                    <p>Branch:C.E.C</p>
+                    <p>marks:</p>
+                    {displayMarks}
+                    <p>Grade: A</p>
+                </div>
+            </div> */}
+            {showModal && <Modal>
+                <div   className="modalContent">
+                    <p className="results">Results</p>
+                    <p>Name:{studentData.studentName}</p>
+                    <p>Branch:{studentData.branchName}</p>
+          
+                    <table>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                        </tr>
+                        {Object.entries(studentData.marks).map(([key, val]) => (
+                            <tr>
+                                <td>{key}</td>
+                                <td>{val}</td>
+                            </tr>
+
+                        ))}
+                    </table>
+                        <p>Grade: <span style={{color:studentData.color}}>{studentData.grade}</span> </p>
+                    <button className="close" onClick={() => setShowModal(false)}>close</button>
+                    </div>
+             
+            </Modal>
+            }
 
         </div>
     )
