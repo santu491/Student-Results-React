@@ -9,7 +9,7 @@ const StudentResults = ({results,selectStudent}) => {
                 <td>{student.studentName}</td>
                 <td className="Teacher">{student.classTeacher}</td>
                 <td>{student.branchName}</td>
-                <td className="button"> <p  onClick={() => {selectStudent(student)}}>Show Result</p></td>
+                <td className="button"><p  onClick={() => {selectStudent(student)}}><i className="fa fa-angle-right fa-lg" style={{width:"30px"}}></i></p></td>
             </tr>
         )
     })
