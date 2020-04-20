@@ -1,0 +1,28 @@
+.resultTable{
+    width:80%;
+    margin: auto;
+    margin-top:3%;
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      text-align: left;
+      padding: 5px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    td.grade{
+      text-align: center;
+      font-weight: bold;
+      
+    }
+    td.button{
+      text-align: center;
+    }
+
+}

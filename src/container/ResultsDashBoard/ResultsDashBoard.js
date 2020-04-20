@@ -84,7 +84,9 @@ import ToolBar from '../ToolBar/ToolBar'
 import { getResults, serachResults } from '../../store/results'
 import './ResultsDashBoard.scss'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import StudentResults from '../../component/studentResultsModal/StudentResultsModal'
+import StudentResultsModal from '../../component/studentResultsModal/StudentResultsModal'
+import StudentResults from '../../component/studentResults/StudentResults'
+
 
 const ResultsDashBoard = (props) => {
     const [showModal, setShowModal] = useState(false)
@@ -131,44 +133,21 @@ const ResultsDashBoard = (props) => {
     }
 
 
-    let resultList = props.results.map((student) => {
-        return (
-
-            <tr>
-                <td className="grade" style={{ color: student.color }}>{student.grade}</td>
-                <td>{student.studentName}</td>
-                <td className="Teacher">{student.classTeacher}</td>
-                <td>{student.branchName}</td>
-                <td className="button"> <p className="btn" onClick={() => {
-                    setStudentData(student)
-                    setShowModal(true)
-                }}>></p></td>
-            </tr>
-
-
-
-        )
-    })
-
-
+   const selectStudent=(student)=>{
+        setStudentData(student)
+        setShowModal(true)
+    }
 
 
     return (
         <div className="studentResults">
-            <ToolBar searchHandler={searchHandler} />
-            <div className="resultTable">
-                <table>
-                    <tr>
-                        <th>Grade</th>
-                        <th>Student Name</th>
-                        <th className="Teacher">Teacher Name</th>
-                        <th>Branch</th>
-                    </tr>
-                    {resultList}
-                </table>
-            </div>
+            <ToolBar searchHandler={searchHandler} />   
+            <StudentResults
+                results={props.results}
+                selectStudent={(student)=>selectStudent(student)}
+            />
             {
-                showModal && <StudentResults studentData={studentData} setShowModal={()=>setShowModal(false)} />
+                showModal && <StudentResultsModal studentData={studentData} setShowModal={() => setShowModal(false)} />
             }
         </div>
     )

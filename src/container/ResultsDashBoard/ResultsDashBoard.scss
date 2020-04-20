@@ -1,53 +1,4 @@
-// .body{
-//     background-color: red;
-// }
-
-.studentResults{
-    
-    // table{
-    //     // background-color: red;
-    //     width:100%;
-    //     border-collapse:collapse;
-    //     padding:100,
-
- 
-    // }
-    // td{
-    //     width: 40%;
-    //     height:30px;
-    //      border-bottom: 1px solid red;
-    // }
- 
-      .resultTable{
-          width:80%;
-          margin: auto;
-          margin-top:3%;
-          table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-          }
-          
-          td, th {
-            text-align: left;
-            padding: 5px;
-          }
-          
-          tr:nth-child(even) {
-            background-color: #dddddd;
-          }
-          td.grade{
-            text-align: center;
-            font-weight: bold;
-            
-          }
-          td.button{
-            text-align: center;
-          }
-
-      }
-}
-
+.studentResults{ 
 .modalContent{
   padding:20px 0;
   margin-left: 30px;
@@ -73,7 +24,7 @@
     background-color: green;
 
   }
-
+}
 }
 
 @media(max-width:499px){

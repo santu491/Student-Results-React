@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from '../../UI/Modal'
 import './StudentResultsModal.scss'
-const StudentResults = ({studentData,setShowModal}) => {
+const StudentResultsModal = ({studentData,setShowModal}) => {
     return (
         <Modal>
             <div className="modalContent">
@@ -31,4 +31,4 @@ const StudentResults = ({studentData,setShowModal}) => {
     )
 }
 
-export default StudentResults
+export default StudentResultsModal
