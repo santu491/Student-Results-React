@@ -1,7 +1,8 @@
 import React from 'react'
 import Modal from '../../UI/Modal'
 import './StudentResultsModal.scss'
-const StudentResultsModal = ({studentData,setShowModal}) => {
+
+const StudentResultsModal = ({ studentData, setShowModal }) => {
     return (
         <Modal>
             <div className="modalContent">

@@ -1,9 +1,10 @@
+@import'../../scss/constants';
 .modalContent{
     padding:20px 0;
     margin-left: 30px;
   
     table{
-      font-family: arial, sans-serif;
+      font-family: $fontFamily;
       border-collapse: collapse;
       width:40%
     }
@@ -17,7 +18,7 @@
       color:green;
       font-weight: bold;
       font-size: 17;
-      font-family: arial, sans-serif;
+      font-family: $fontFamily;
     }
     .close{
       width:70px;

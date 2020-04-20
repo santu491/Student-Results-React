@@ -1,9 +1,12 @@
+
+@import'../../scss/constants';
+
 .resultTable{
     width:80%;
     margin: auto;
     margin-top:3%;
     table {
-      font-family: arial, sans-serif;
+      font-family: $fontFamily;
       border-collapse: collapse;
       width: 100%;
     }
@@ -35,7 +38,6 @@
       text-align: center;
       color:red;
       cursor: pointer;
-     // padding:0 10px;
      
     }
     tr:hover{

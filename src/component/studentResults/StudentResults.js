@@ -9,7 +9,6 @@ const StudentResults = ({results,selectStudent}) => {
                 <td>{student.studentName}</td>
                 <td className="Teacher">{student.classTeacher}</td>
                 <td>{student.branchName}</td>
-                {/* <td className="button"> <p  onClick={() => {selectStudent(student)}}>></p></td> */}
                 <td className="button"> <p  onClick={() => {selectStudent(student)}}>Show Result</p></td>
             </tr>
         )
