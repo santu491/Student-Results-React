@@ -80,12 +80,12 @@
 import React, { useEffect, useState } from 'react'
 //import { studentsInfo } from '../constants/StudentsInfo'
 import { connect } from 'react-redux'
-import { convertIntoGrades, convertIntoPercentage } from '../utilities/genericFunctions'
-import ToolBar from './ToolBar'
-import { getResults, serachResults } from '../store/results'
-import './StudentResults.scss'
+import { convertIntoGrades, convertIntoPercentage } from '../../utilities/genericFunctions'
+import ToolBar from '../ToolBar/ToolBar'
+import { getResults, serachResults } from '../../store/results'
+import './ResultsDashBoard.scss'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Modal from '../UI/Modal'
+import Modal from '../../UI/Modal'
 
 const StudentResults = (props) => {
 
