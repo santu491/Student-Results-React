@@ -79,7 +79,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { convertIntoGrades, convertIntoPercentage } from '../../utilities/genericFunctions'
+import { setPercaentage } from '../../utilities/genericFunctions'
 import ToolBar from '../ToolBar/ToolBar'
 import { getResults, serachResults } from '../../store/results'
 import './ResultsDashBoard.scss'
@@ -91,17 +91,6 @@ import StudentResults from '../../component/studentResults/StudentResults'
 const ResultsDashBoard = (props) => {
     const [showModal, setShowModal] = useState(false)
     const [studentData, setStudentData] = useState({})
-
-    const setPercaentage = (results) => {
-        let marks = []
-        for (let key in results) {
-            marks.push(parseFloat(results[key]))
-        }
-        const totalMarks = marks.reduce((accmulator, currentValue) => accmulator + currentValue)
-        const percentage = convertIntoPercentage(totalMarks)
-        const grade = convertIntoGrades(percentage)
-        return grade
-    }
 
     const updateResults = () => {
         let updatedData = props.results.map((student) => {

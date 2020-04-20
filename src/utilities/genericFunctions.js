@@ -35,3 +35,14 @@ export const convertIntoGrades = (percentage) => {
 
     return {grade:grade,color:color}
 }
+
+export const setPercaentage = (results) => {
+    let marks = []
+    for (let key in results) {
+        marks.push(parseFloat(results[key]))
+    }
+    const totalMarks = marks.reduce((accmulator, currentValue) => accmulator + currentValue)
+    const percentage = convertIntoPercentage(totalMarks)
+    const grade = convertIntoGrades(percentage)
+    return grade
+}
