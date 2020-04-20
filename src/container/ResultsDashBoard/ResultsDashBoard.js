@@ -12,6 +12,7 @@ const ResultsDashBoard = (props) => {
     const [showModal, setShowModal] = useState(false)
     const [studentData, setStudentData] = useState({})
 
+    //update student results with gardes and grade color
     const updateResults = () => {
         let updatedData = props.results.map((student) => {
             return {
@@ -29,6 +30,8 @@ const ResultsDashBoard = (props) => {
         //     if (x > y) { return 1; }
         //     return 0;
         // })
+
+        //Sort based on Grade and  studentnames
         updatedData.sort((a, b) => {
             let u = a.studentName.toLowerCase();
             let v = b.studentName.toLowerCase();

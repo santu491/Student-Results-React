@@ -1,8 +1,10 @@
+// Convert marks into percentage 
 export const convertIntoPercentage = (totalMarks) => {
     const percentage = (totalMarks / 600) * 100
     return percentage
 }
 
+//convert percentage into grades
 export const convertIntoGrades = (percentage) => {
     let grade
     let color
@@ -36,6 +38,7 @@ export const convertIntoGrades = (percentage) => {
     return {grade:grade,color:color}
 }
 
+//SetPercentage
 export const setPercaentage = (results) => {
     let marks = []
     for (let key in results) {

@@ -3,29 +3,18 @@
     height:100%;
     background-color:rgba(0,0,0,0.5);
     z-index: 100;
-  left:0;
-  top:0;
-  position: fixed;
+    left:0;
+    top:0;
+    position: fixed;
   
 
   }
   .modelContainer{
-    // width: 70%;
-    // background-color: #ffffff;
-    // height: 50%;
-    // z-index: 500;
-   // position: fixed;
     z-index: 500;
     background-color: white;
     width: 70%;
     border:1px solid #ccc;
     border-radius: 10px;
-  margin:10% 20%  0 10%;
-    
-    //box-shadow: 1px 1px 1px #ccc;
-    // padding:16px;
-    // left:15px;
-    // top: 30%;
-    // box-sizing: border-box;
+    margin:10% 20%  0 10%; 
     transition: all 0.3s ease-out;
   }
