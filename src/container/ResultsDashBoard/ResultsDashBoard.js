@@ -82,7 +82,6 @@ import { connect } from 'react-redux'
 import { setPercaentage } from '../../utilities/genericFunctions'
 import ToolBar from '../ToolBar/ToolBar'
 import { getResults, serachResults } from '../../store/results'
-import './ResultsDashBoard.scss'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import StudentResultsModal from '../../component/studentResultsModal/StudentResultsModal'
 import StudentResults from '../../component/studentResults/StudentResults'
