@@ -24,7 +24,7 @@ const StudentResultsModal = ({ studentData, setShowModal }) => {
                     ))}
                 </table>
                 <p>Grade: <span style={{ color: studentData.color }}>{studentData.grade}</span> </p>
-                <button className="close" onClick={setShowModal}>close</button>
+                <button className="close" onClick={setShowModal}>Close</button>
             </div>
 
         </Modal>
