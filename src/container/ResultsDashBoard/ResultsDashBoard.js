@@ -144,7 +144,7 @@ const ResultsDashBoard = (props) => {
 
 
     return (
-        <div >
+        <>
             <ToolBar searchHandler={searchHandler} />
             <StudentResults
                 results={props.results}
@@ -153,7 +153,7 @@ const ResultsDashBoard = (props) => {
             {
                 showModal && <StudentResultsModal studentData={studentData} setShowModal={() => setShowModal(false)} />
             }
-        </div>
+        </>
     )
 }
 
