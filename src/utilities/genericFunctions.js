@@ -21,7 +21,7 @@ export const convertIntoGrades = (percentage) => {
             break;
         case (percentage < 70) && (60 <= percentage):
             grade = "D";
-            color="yellow";
+            color="#8000ff";
             break;
         case percentage < 60:
             grade = "F";
